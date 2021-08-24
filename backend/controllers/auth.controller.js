@@ -9,6 +9,11 @@ const login = async (req, res) => {
         message: 'Invalid credentials',
     });
 
+    if( !user.dbStatus ) return res.status(401).send({
+        code: 102,
+        message: 'Invalid credentials',
+    });
+
     const hash = await bcrypt.compare( req.body.password, user.password );
 
     if( !hash ) return res.status(401).send({
