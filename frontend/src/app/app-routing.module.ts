@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ListRoleComponent } from './home/list-role/list-role.component';
-import { ListTasksComponent } from './home/list-tasks/list-tasks.component';
-import { ListUsersComponent } from './home/list-users/list-users.component';
-import { LoginComponent } from './home/login/login.component';
-import { RegisterAdminComponent } from './home/register-admin/register-admin.component';
-import { RegisterRoleComponent } from './home/register-role/register-role.component';
+// Components
+// home components
+import { LoginComponent }    from './home/login/login.component';
 import { RegisterComponent } from './home/register/register.component';
-import { UpdateRoleComponent } from './home/update-role/update-role.component';
-import { UpdateUserComponent } from './home/update-user/update-user.component';
-
+// board components
+import { ListTaskComponent } from './board/list-task/list-task.component';
+import { SaveTaskComponent } from './board/save-task/save-task.component';
+// admin compts
+import { ListUserComponent }     from './admin/list-user/list-user.component';
+import { RegisterUserComponent } from './admin/register-user/register-user.component';
+import { UpdateUserComponent }   from './admin/update-user/update-user.component';
+import { RegisterRoleComponent } from './admin/register-role/register-role.component';
+import { ListRoleComponent }     from './admin/list-role/list-role.component';
+import { UpdateRoleComponent }   from './admin/update-role/update-role.component';
 
 const routes: Routes = [
   {
@@ -18,24 +22,28 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'listTasks',
-    component: ListTasksComponent,
+    path: 'listTask',
+    component: ListTaskComponent,
+  },
+  {
+    path: 'saveTask',
+    component: SaveTaskComponent,
   },
   {
     path: 'login',
     component: LoginComponent,
   },
   {
-    path: 'register',
+    path: 'signUp',
     component: RegisterComponent,
   },
   {
     path: 'listUser',
-    component: ListUsersComponent
+    component: ListUserComponent,
   },
   {
-    path: 'registerAdmin',
-    component: RegisterAdminComponent,
+    path: 'registerUser',
+    component: RegisterUserComponent,
   },
   {
     path: 'updateUser',
