@@ -1,17 +1,17 @@
 <mat-toolbar class="bg-header">
     <ul>
-        <a routerLink="listTask">List Task</a>
+        <a *ngIf="userSvc.loggedIn()" routerLink="listTask">List Task</a>
     </ul>
     <ul>
-        <a routerLink="saveTask">Create Task</a>
+        <a *ngIf="userSvc.loggedIn()" routerLink="saveTask">Create Task</a>
     </ul>
     <ul>
-        <a routerLink="listUser">Admin</a>
+        <a *ngIf="userSvc.loggedIn()" routerLink="listUser">Admin</a>
     </ul>
     <span class="headerSpacer"></span>
     <ul>
-        <a mat-button routerLink="signUp">Sign Up</a>
-        <a mat-button routerLink="login">Login</a>
-        <a mat-button>Logout</a>
+        <a *ngIf="!userSvc.loggedIn()" mat-button routerLink="signUp">Sign Up</a>
+        <a *ngIf="!userSvc.loggedIn()" mat-button routerLink="login">Login</a>
+        <a *ngIf="userSvc.loggedIn()" (click)="userSvc.logout()" mat-button>Logout</a>
     </ul>
 </mat-toolbar>

@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { Router }            from '@angular/router';
 // Material
 import { 
   MatSnackBar,
   MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition
 } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
+// interfaces
 import { UserI } from 'src/app/interfaces/user';
+// services
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
